@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mondrian Project</title>
+  <style>
+    /* 
+    Write your CSS here 
+    Gap Colour: #000
+    White: #F0F1EC
+    Red: #E72F24
+    Black: #232629
+    Blue: #004592
+    Yellow: #F9D01E
+
+    For dimensions, see dimensions.png image.
+    HINT: Remember you can't change the properties of grid lines.
+    But grid lines are transparent!
+    */
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      padding: 0;
+    }
+    .grid-container{
+      background-color: black;
+      height: 748px;
+      width: 748px;
+      display: grid;
+      grid-template-columns: 320px 198px 153px 50px;
+      grid-template-rows: 414px 130px 155px 20px;
+      gap: 9px;
+    }
+    .block{
+      background-color: grey;
+    }
+    .red{
+      background-color: red;
+      grid-column: 1 / 2;
+      grid-row: 1 / 2;
+    }
+    .grey1{
+      grid-column: 2/-1;
+      grid-row: 1/2;
+    }
+    .grey2{
+      grid-column:1/2;
+      grid-row: 2/4;
+    }
+    .grey3{
+      grid-column: 2/4;
+      grid-row: 2/4;
+    }
+    .blue{
+      background-color: blue;
+      grid-column: 4/-1;
+      grid-row: 2/3;
+      border-bottom: 10px solid black;
+    }
+    .grey4{
+      grid-column: 1/2;
+      grid-row: 4/-1;
+    }
+    .yellow{
+      background-color: yellow;
+      grid-column: 2/3;
+      grid-row: 4/-1;
+    }
+    .grey5{
+      grid-column: 4/-1;
+      grid-row: 3/-1;
+    }
+    .green{
+      background-color: green;
+      grid-column: 3/4;
+      grid-row: 4/-1;
+    }
+
+  </style>
+</head>
+
+<body>
+  <div class="grid-container">
+    <div class="red block"></div>
+    <div class="grey1 block"></div>
+    <div class="grey2 block"></div>
+    <div class="grey3 block"></div>
+    <div class="grey4 block"></div>
+    <div class="blue block"></div>
+    <div class="grey5 block"></div>
+    <div class="green block"></div>
+    <div class="yellow block"></div>
+  </div>
+</body>
+
+</html>
