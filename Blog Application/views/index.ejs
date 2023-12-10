@@ -1,0 +1,25 @@
+<%- include("partials/header.ejs") %>
+
+<nav class="navbar navbar-light  md-4">
+    <h1 class="font-weight-bold" style="color: #800000;">BLOG ARTICLES</h1>
+    <a class="nav-link text-uppercase px-0" href="/article">Add Blog</a>
+</nav>
+
+
+<% for(let i = 0; i<blogposts.length; i++){%>
+    <div class="card my-5" style="width: 100%; background-color: rgb(229, 229, 229);">
+        <div class="card-body">
+        <h5 class="card-title text-uppercase mb-3" style="color: #800000;"><%= blogposts[i]["articlename"]%></h5>
+        <h6 class="card-subtitle mb-2 text-muted text-capitalize mb-2"><%= blogposts[i]["date"] %></h6>
+        <p class="card-text text-capitalize"><%= blogposts[i]["description"] %></p>
+        <a href="/edit/<%= blogposts[i]["id"] %>" class="card-link">Edit</a>
+        <form action="/delete/<%= blogposts[i]["id"] %>?_method=DELETE" method="POST" class="d-inline">
+            <button type="submit" class="btn btn-danger">Delete</button>
+        </form>
+        </div>
+    </div>
+<%}%>
+
+    
+
+<%- include("partials/footer.ejs") %>

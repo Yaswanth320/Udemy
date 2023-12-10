@@ -1,0 +1,10 @@
+<%- include("partials/header.ejs") %>
+
+
+<h1 class="mb-4 text-uppercase font-weight-bold">New article</h1>
+
+<form action="/update/<%= id %>?_method=PUT" method="POST">
+    <%- include('partials/_form_fields.ejs') %>
+  </form>
+
+<%- include("partials/footer.ejs") %>
