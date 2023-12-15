@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .card{
+            width: 100px;
+            height: 100px;
+            background: black;
+            opacity: 1;
+            margin-top: 100px;
+            margin-left: 100px;
+            position: relative;
+        }
+        .card:hover::before,
+        .card:hover::after{
+            animation: none;
+            opacity: 0;
+        }
+
+        .card::before{
+            content: "";
+            width: 108%;
+            height: 104%;
+            position: absolute;
+            top: -2%;
+            left: -4%;
+            z-index: -1;
+            background-image: linear-gradient(
+                var(--rotate),
+                #5ddcff,
+                #3c67e3 43%,
+                #4e00c2
+            );
+            animation: spin 2.5s linear infinite;
+        }
+
+        .card::after{
+            content: "";
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: calc(100px/6);
+            z-index: -1;
+            margin: 0 auto;
+            transform: scale(0.8);
+            filter: blur(calc(100px / 6));
+            background-image: linear-gradient(
+                var(--rotate),
+                #5ddcff,
+                #3c67e3 43%,
+                #4e00c2
+            );
+            opacity: 1;
+            transform: opacity 0.5s;
+            animation: spin 2.5s linear infinite;
+        }
+
+            @property --rotate {
+            syntax: "<angle>";
+            initial-value: 132deg;
+            inherits: false;
+            }
+
+            @keyframes spin {
+            0% {
+                --rotate: 0deg;
+            }
+            100% {
+                --rotate: 360deg;
+            }
+            }
+    </style>
+</head>
+<body>
+    <div class="card">
+
+    </div>
+</body>
+</html>
